@@ -1,6 +1,8 @@
+// MIRROR — table defined in automarket-backend/src/sql/create_tables.sql (listingsitea_controls)
+// No canonical Sequelize model in backend; this is the scraper write-side model.
 const { Model, DataTypes } = require('sequelize');
 
-module.exports = (sequelize,DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   class Control extends Model {
     static associate(models) {
       // No associations needed

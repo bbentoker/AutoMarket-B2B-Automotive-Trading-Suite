@@ -34,6 +34,12 @@ flowchart LR
 | [`automarket-dashboard/`](automarket-dashboard/) | React, TypeScript, Vite | Dealer dashboard: wishlist, purchases, invoices |
 | [`automarket-landing/`](automarket-landing/) | Next.js, Tailwind | Marketing site with auth flows |
 
+## Documentation
+
+- [Feature inventory](FEATURES.md) — everything each app can do, by role
+- [Database schema](DATABASE.md) — ER diagrams, table reference, FK matrix
+- Canonical DDL: [`automarket-backend/src/sql/create_tables.sql`](automarket-backend/src/sql/create_tables.sql)
+
 ## Getting started
 
 Each sub-project has its own `.env.example`. Copy it to `.env` and fill in your own values:

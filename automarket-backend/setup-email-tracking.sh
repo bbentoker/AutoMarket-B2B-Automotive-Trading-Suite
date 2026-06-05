@@ -9,15 +9,10 @@ if [ ! -f .env ]; then
     exit 1
 fi
 
-echo "📋 Step 1: Running database migration..."
-node run-migration.js
-
-if [ $? -eq 0 ]; then
-    echo "✅ Migration completed successfully"
-else
-    echo "❌ Migration failed. Please check your database configuration."
-    exit 1
-fi
+echo "📋 Step 1: Verifying database schema..."
+echo "   Schema is defined in src/sql/create_tables.sql (single source of truth)."
+echo "   If newsletters table is missing email_type/sent_at columns, re-run:"
+echo "   psql -d \$DB_NAME -f src/sql/create_tables.sql"
 
 echo ""
 echo "📋 Step 2: Testing email tracking setup..."

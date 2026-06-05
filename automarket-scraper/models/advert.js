@@ -1,6 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
+// MIRROR of automarket-backend/src/models/advert.js
+// Keep field definitions in sync with the canonical backend model.
+// Scraper intentionally omits defaultScope so write/checker paths can access all rows.
+const { Model, DataTypes, Op } = require('sequelize');
 
-module.exports = (sequelize,DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   class Advert extends Model {
     static associate(models) {
     }
@@ -85,6 +88,18 @@ module.exports = (sequelize,DataTypes) => {
       modelName: 'Advert',
       tableName: 'listingsitea_adverts',
       timestamps: false,
+      scopes: {
+        excludeInitialRun: {
+          where: {
+            is_initial_run_listing: {
+              [Op.ne]: true,
+            },
+          },
+        },
+        withInitialRunListings: {
+          where: {},
+        },
+      },
     }
   );
 

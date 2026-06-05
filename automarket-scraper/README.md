@@ -22,8 +22,7 @@ automarket-scraper/
 │   └── database.js              # Database configuration
 ├── scripts/                      # Utility scripts
 │   └── example.js               # Example implementation
-├── docs/                         # Documentation
-│   └── database_schema.sql      # Database schema
+├── docs/                         # Documentation (schema owned by backend)
 ├── main.js                       # Application entry point
 └── package.json
 ```
@@ -48,7 +47,12 @@ automarket-scraper/
    API_URL=https://your-api-domain.com
    ```
 
-3. Set up your database using the schema in `docs/database_schema.sql`
+3. Set up your database using the canonical schema in the backend repo:
+   ```bash
+   psql -d $DB_NAME -f ../automarket-backend/src/sql/create_tables.sql
+   psql -d $DB_NAME -f ../automarket-backend/src/sql/create_countries.sql
+   ```
+   The scraper's Sequelize models in `models/` are **mirrors** of the backend definitions — keep them in sync with `automarket-backend/src/models/`.
 
 ## Usage
 

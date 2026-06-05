@@ -25,6 +25,11 @@ const Newsletter = sequelize.define(
         key: 'id',
       },
     },
+    email_type: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
+      defaultValue: 'newsletter',
+    },
     recipient_email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -42,6 +47,10 @@ const Newsletter = sequelize.define(
       type: DataTypes.STRING,
       allowNull: true,
       comment: 'Mailgun message ID for tracking',
+    },
+    sent_at: {
+      type: DataTypes.DATE,
+      allowNull: true,
     },
   },
   {

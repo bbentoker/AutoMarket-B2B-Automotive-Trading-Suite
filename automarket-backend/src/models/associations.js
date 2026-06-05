@@ -258,9 +258,10 @@ WishlistOptions.belongsTo(User, {
   as: 'user',
 });
 
-WishlistOptions.belongsTo(Listing, {
+// listing_id references listingsitea_adverts.id (historical column name)
+WishlistOptions.belongsTo(Advert, {
   foreignKey: 'listing_id',
-  as: 'listing',
+  as: 'advert',
 });
 
 // User has many wishlist options
@@ -269,8 +270,7 @@ User.hasMany(WishlistOptions, {
   as: 'wishlistOptions',
 });
 
-// Listing can be in many wishlist options
-Listing.hasMany(WishlistOptions, {
+Advert.hasMany(WishlistOptions, {
   foreignKey: 'listing_id',
   as: 'wishlistOptions',
 });

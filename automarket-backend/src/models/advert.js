@@ -1,3 +1,4 @@
+// Canonical model for listingsitea_adverts — mirrored by automarket-scraper/models/advert.js
 const { DataTypes, Op } = require('sequelize');
 const sequelize = require('../config/database');
 
@@ -71,6 +72,7 @@ const Advert = sequelize.define(
     link: DataTypes.STRING,
     sell_time: DataTypes.INTEGER,
     image_url: DataTypes.STRING,
+    original_image_url: DataTypes.STRING,
     is_initial_run_listing: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,

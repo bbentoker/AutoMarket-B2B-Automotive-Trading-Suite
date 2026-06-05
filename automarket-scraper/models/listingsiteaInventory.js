@@ -1,3 +1,5 @@
+// MIRROR of automarket-backend/src/models/listingsiteaInventory.js
+// Keep field definitions in sync with the canonical backend model.
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {

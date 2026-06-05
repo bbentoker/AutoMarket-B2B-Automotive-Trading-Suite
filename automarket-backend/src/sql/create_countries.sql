@@ -1,11 +1,5 @@
--- Create countries table
-CREATE TABLE countries (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    code VARCHAR(2) NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- Country seed data (table defined in create_tables.sql)
+-- Run after: psql -d $DB_NAME -f src/sql/create_tables.sql
 
 -- Insert country data
 INSERT INTO countries (name, code) VALUES ('Afghanistan', 'AF');

@@ -58,7 +58,7 @@ const Blog = sequelize.define(
     },
   },
   {
-    tableName: 'blogss',
+    tableName: 'blogs',
     timestamps: true,
     underscored: true,
     createdAt: 'created_at',

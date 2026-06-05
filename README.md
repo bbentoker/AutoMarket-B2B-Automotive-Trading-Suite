@@ -25,14 +25,14 @@ flowchart LR
 
 ## Sub-projects
 
-| Directory | Stack | Purpose |
-|-----------|-------|---------|
-| [`automarket-backend/`](automarket-backend/) | Node.js, Express, Sequelize, PostgreSQL | REST API: auth, listings, invoices, emails, cron jobs |
-| [`automarket-scraper/`](automarket-scraper/) | Node.js, Puppeteer/Cheerio, cron | Automated listing scraper with checker service |
-| [`automarket-admin/`](automarket-admin/) | React, Vite, Tailwind | Internal admin panel for dealers, deals, scraping |
-| [`automarket-browse/`](automarket-browse/) | React, Vite, i18n (5 languages) | Public buyer-facing car browse experience |
-| [`automarket-dashboard/`](automarket-dashboard/) | React, TypeScript, Vite | Dealer dashboard: wishlist, purchases, invoices |
-| [`automarket-landing/`](automarket-landing/) | Next.js, Tailwind | Marketing site with auth flows |
+| Directory | Stack | Purpose | README |
+|-----------|-------|---------|--------|
+| [`automarket-backend/`](automarket-backend/) | Node.js, Express, Sequelize, PostgreSQL | REST API: auth, listings, invoices, emails, cron jobs | [README](automarket-backend/README.md) |
+| [`automarket-scraper/`](automarket-scraper/) | Node.js, Puppeteer/Cheerio, cron | Automated listing scraper with checker service | [README](automarket-scraper/README.md) |
+| [`automarket-admin/`](automarket-admin/) | React, Vite, Tailwind | Internal admin panel for dealers, deals, scraping | [README](automarket-admin/README.md) |
+| [`automarket-browse/`](automarket-browse/) | React, Vite, i18n (5 languages) | Public buyer-facing car browse experience | [README](automarket-browse/README.md) |
+| [`automarket-dashboard/`](automarket-dashboard/) | React, TypeScript, Vite | Dealer dashboard: wishlist, purchases, invoices | [README](automarket-dashboard/README.md) |
+| [`automarket-landing/`](automarket-landing/) | Next.js, Tailwind | Marketing site with auth flows | [README](automarket-landing/README.md) |
 
 ## Documentation
 
@@ -42,17 +42,49 @@ flowchart LR
 
 ## Getting started
 
-Each sub-project has its own `.env.example`. Copy it to `.env` and fill in your own values:
+All six sub-projects live in this single repo. Each has its own `.env.example` and [README](automarket-backend/README.md) with setup details. Dependencies are **not** committed — run `npm install` in each project you want to run.
+
+### Recommended startup order
+
+**1. Backend (required first)**
 
 ```bash
-# Example for the backend
 cd automarket-backend
+cp .env.example .env   # fill in DB credentials and JWT_SECRET
+npm install
+npm start              # http://localhost:3000
+```
+
+See [automarket-backend/README.md](automarket-backend/README.md) for database schema setup.
+
+**2. Frontends (pick any or all)**
+
+```bash
+# Marketing / auth site
+cd automarket-landing && cp .env.example .env && npm install && npm run dev
+
+# Public car browse
+cd automarket-browse && cp .env.example .env && npm install && npm run dev
+
+# Dealer dashboard
+cd automarket-dashboard && cp .env.example .env && npm install && npm run dev
+
+# Internal admin panel
+cd automarket-admin && cp .env.example .env && npm install && npm run dev
+```
+
+Point each frontend's API URL env var at `http://localhost:3000` (or `http://localhost:3000/api` where applicable).
+
+**3. Scraper (optional, needs DB + API)**
+
+```bash
+cd automarket-scraper
 cp .env.example .env
 npm install
 npm start
 ```
 
-Repeat for each app you want to run locally.
+See [automarket-scraper/README.md](automarket-scraper/README.md) for scheduler and memory-optimization details.
 
 ## Key technical highlights
 

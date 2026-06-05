@@ -1,14 +1,14 @@
-# AutoMarket Browse
+# AutoMarket Dashboard
 
-Public buyer-facing car browsing application with multi-language support (EN, DE, FR, IT, NL).
+Dealer-facing dashboard for wishlists, purchases, invoices, and weekly performance reports.
 
 ## Stack
 
 - React 18
+- TypeScript
 - Vite
 - Tailwind CSS
-- i18next (5 languages)
-- Swiper, Framer Motion
+- Radix UI
 
 ## Prerequisites
 
@@ -27,8 +27,8 @@ npm install
 | Variable | Purpose |
 |----------|---------|
 | `VITE_API_BASE_URL` | Backend API base URL (e.g. `http://localhost:3000/api`) |
-| `VITE_LANDING_URL` | Marketing/landing site URL for auth links |
-| `VITE_DASHBOARD_URL` | Dealer dashboard URL for logged-in dealers |
+| `VITE_BROWSE_APP_URL` | Public browse app URL for cross-app navigation |
+| `VITE_LANDING_URL` | Marketing/landing site URL for auth redirects |
 
 See [`.env.example`](.env.example) for placeholder values.
 
@@ -52,13 +52,6 @@ Output goes to `dist/`. Preview the production build with:
 npm run preview
 ```
 
-### i18n maintenance
-
-```bash
-npm run i18n:extract
-npm run i18n:sync
-```
-
 ## Deploy
 
 - [`Dockerfile`](Dockerfile) — production container image
@@ -66,14 +59,8 @@ npm run i18n:sync
 - [`nginx.conf`](nginx.conf) — static file serving config
 - [`nginx-setup.md`](nginx-setup.md) — reverse proxy setup
 
-## Features
-
-- Vehicle search with advanced filters
-- Car detail pages with image galleries and damaged-parts views
-- Cookie, privacy, and terms policy modals
-- Responsive desktop and mobile layouts
-
 ## Related docs
 
+- [Weekly report feature](WEEKLY_REPORT_README.md)
 - [Platform feature inventory](../FEATURES.md)
 - [Backend API](../automarket-backend/README.md)

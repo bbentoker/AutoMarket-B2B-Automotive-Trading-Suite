@@ -1,0 +1,21 @@
+void automation.test_transition()
+{
+
+}
+okey now fill this 
+module is Deals 
+it should get the API Stage field of the deal then based on the stage trigger transitons such as 
+('Cars for Sale'),
+('Reserved') Reserved, 
+('Offers') Move To Offers, 
+('Purchased') Purchased, 
+('Proforma Invoice Sent') Send Invoice, 
+('Payment Received') Payment Received, 
+('Payment Sent') Payment Sent , 
+('Transport Booked') Book Transport , 
+('Car Picked Up')  Car Picked Up, 
+('Documents Sent') Send Documents, 
+('Car Delivered') Car Delivered, 
+('Car De-registered') Car De-registered , 
+('Deal Done') Deal Done, 
+('No Deal') No Deal

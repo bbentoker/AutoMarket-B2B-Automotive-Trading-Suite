@@ -1,0 +1,483 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Circular font */
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/CircularStd-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/CircularStd-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular";
+  src: url("/fonts/CircularStd-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 217.5 91.2% 31.4%; /* Updated to blue-900 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 351 100% 61%; /* Updated to FF385C */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 351 100% 61%; /* Updated to FF385C */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217.5 91.2% 31.4%; /* Updated to blue-900 */
+    --radius: 0.5rem;
+
+    /* Sidebar variables */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.5 91.2% 31.4%; /* Updated to blue-900 */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.5 91.2% 31.4%; /* Updated to blue-900 */
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 351 100% 61%; /* Updated to FF385C */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 351 100% 61%; /* Updated to FF385C */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.5 91.2% 31.4%; /* Updated to blue-900 */
+
+    /* Sidebar variables */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.5 91.2% 31.4%; /* Updated to blue-900 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    font-family: "Circular", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+      "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Circular", system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Additional utility classes for Circular font weights */
+.font-circular {
+  font-family: "Circular", system-ui, sans-serif;
+}
+.font-circular-book {
+  font-family: "Circular", system-ui, sans-serif;
+  font-weight: 400;
+}
+.font-circular-medium {
+  font-family: "Circular", system-ui, sans-serif;
+  font-weight: 500;
+}
+.font-circular-bold {
+  font-family: "Circular", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Additional utility classes for custom text colors */
+@layer utilities {
+  .text-primary-red {
+    color: #ff385c;
+  }
+
+  .text-secondary-dark {
+    color: #222222;
+  }
+
+  .text-gradient-red-dark {
+    background: linear-gradient(to right, #ff385c, #222222);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Text shadow utilities */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-md {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-none {
+  text-shadow: none;
+}
+
+/* Card hover effects */
+.card-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: rgba(249, 250, 251, 0.8);
+}
+
+/* Button hover effects */
+.button-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.button-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Image preview indicator styles */
+.image-preview-indicator {
+  height: 4px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.image-preview-indicator.active {
+  width: 48px;
+  background-color: #ff385c; /* Updated from blue-900 */
+}
+
+.image-preview-indicator.inactive {
+  width: 32px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.image-preview-indicator.inactive:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.tooltip-trigger:hover .tooltip {
+  opacity: 1;
+}
+
+/* Image transition styles */
+.image-fade-transition {
+  transition: opacity 0.3s ease;
+}
+
+/* Logo scroll container styles */
+.logo-scroll-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-scroll-container .flex {
+  display: flex;
+  width: max-content;
+}
+
+/* Navigation bar specific styles */
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #0f3460, #ff385c);
+}
+
+.nav-button-hover:hover {
+  color: #0f3460;
+}
+
+.dark .nav-button-hover:hover {
+  color: #5eead4;
+}
+
+.nav-logo-container {
+  background: linear-gradient(to bottom right, #0f3460, #0d9488);
+  box-shadow: 0 10px 15px -3px rgba(15, 52, 96, 0.2);
+}
+
+@media (max-width: 640px) {
+  .image-preview-indicator {
+    height: 3px;
+  }
+
+  .image-preview-indicator.active {
+    width: 36px;
+  }
+
+  .image-preview-indicator.inactive {
+    width: 24px;
+  }
+}
+
+/* Sticky header styles */
+.sticky-header-transition {
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, background-color, box-shadow;
+}
+
+/* Optimize performance for fixed/sticky elements */
+.sticky-header-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Add padding to body to account for sticky header */
+body.has-sticky-header {
+  scroll-padding-top: var(--header-height, 64px);
+}
+
+/* Ensure content sections have proper spacing */
+.content-section {
+  scroll-margin-top: var(--header-height, 64px);
+}
+
+/* Responsive adjustments for the sticky header */
+@media (max-width: 768px) {
+  .sticky-header-mobile {
+    height: var(--header-height-mobile, 56px);
+  }
+}
+
+/* Add padding to body to account for sticky header */
+body {
+  scroll-padding-top: 80px; /* Adjust based on header height */
+}
+
+/* Mobile-specific fixes for initial load and display issues */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Fix for sections not displaying properly on initial mobile load */
+@media (max-width: 768px) {
+  section {
+    min-height: auto;
+    overflow: visible;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Ensure proper spacing between sections */
+  section + section {
+    margin-top: 0;
+  }
+
+  /* Fix for content being cut off */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Improve initial load appearance */
+  .motion-safe:where([data-animate="true"]) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Fix for sticky header issues */
+  .sticky-header-mobile {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  /* Ensure proper spacing after hero section */
+  #how-it-works {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Fix for mobile menu positioning */
+@media (max-width: 640px) {
+  .sheet-content {
+    width: 85vw !important;
+  }
+}
+
+/* Improve mobile animations performance */
+@media (max-width: 768px) {
+  * {
+    transition-duration: 0.3s !important;
+  }
+
+  /* Logo animation exception */
+  .logo-scroll-container .flex {
+    animation-duration: 30s !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* Fix for initial load flicker */
+.no-js-hidden {
+  opacity: 0;
+}
+
+.js-loaded .no-js-hidden {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Add JS detection on page load */
+.js-loaded {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Mobil görünüm için ek düzeltmeler */
+.is-mobile section,
+.is-mobile [data-framer-motion],
+.is-mobile [data-animate="true"] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  animation: none !important;
+}
+
+/* Framer Motion animasyonlarını mobil cihazlarda düzelt */
+.is-mobile .framer-motion-div {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Mobil cihazlarda yükseklik hesaplaması için */
+.min-h-screen {
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Mobil cihazlarda animasyonları devre dışı bırak */
+@media (max-width: 768px) {
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Custom Sonner Toast Styles */
+[data-sonner-toast][data-type="success"] {
+  background-color: #ffffff !important;
+  border: 1px solid #16a34a !important;
+  color: #15803d !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-icon] {
+  color: #16a34a !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-title] {
+  color: #15803d !important;
+  font-weight: 500 !important;
+}
+
+[data-sonner-toast][data-type="success"] [data-description] {
+  color: #166534 !important;
+}
+
+/* Dark mode support for success toast */
+.dark [data-sonner-toast][data-type="success"] {
+  background-color: #1f2937 !important;
+  border: 1px solid #16a34a !important;
+  color: #4ade80 !important;
+}
+
+.dark [data-sonner-toast][data-type="success"] [data-icon] {
+  color: #16a34a !important;
+}
+
+.dark [data-sonner-toast][data-type="success"] [data-title] {
+  color: #4ade80 !important;
+}
+
+.dark [data-sonner-toast][data-type="success"] [data-description] {
+  color: #86efac !important;
+}

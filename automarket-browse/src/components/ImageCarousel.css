@@ -1,0 +1,50 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+.thumbs-swiper {
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+.thumbs-swiper .swiper-slide {
+  transition: all 0.3s ease;
+  height: auto;
+  overflow: hidden;
+}
+
+.thumbs-swiper .swiper-slide-thumb-active button {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.thumbs-swiper .swiper-slide button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  line-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.thumbs-swiper .swiper-slide img {
+  display: block;
+  width: 140%;
+  height: 140%;
+  object-fit: cover;
+  transform: scale(1.4);
+  margin: -20%;
+} 

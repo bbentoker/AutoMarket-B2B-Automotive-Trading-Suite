@@ -1,0 +1,17 @@
+{
+  "locales": ["en", "nl", "fr", "it", "de"],
+  "input": ["src/**/*.{js,jsx}"],
+  "output": "src/locales",
+  "defaultNamespace": "translation",
+  "sort": true,
+  "createOldCatalogs": false,
+  "lexers": {
+    "jsx": ["JsxLexer"],
+    "js": ["JsxLexer"]
+  },
+  "keySeparator": ".",
+  "namespaceSeparator": ":",
+  "defaultValue": "",
+  "indentation": 2,
+  "lineEnding": "lf"
+}

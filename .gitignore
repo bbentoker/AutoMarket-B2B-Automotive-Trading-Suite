@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Environment (never commit real secrets)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Logs
+logs/
+*.log
+systemlog.txt
+debug.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# TypeScript
+*.tsbuildinfo
+
+# Customer data (should never be committed)
+*.xlsx
+*.csv
+invoices/
+
+# Temp / debug
+temp.json
+debug-screenshot.png

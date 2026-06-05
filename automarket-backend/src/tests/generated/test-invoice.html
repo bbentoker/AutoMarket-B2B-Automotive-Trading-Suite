@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOLKBILAR I SVEDALA AB Invoice</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #333;
+        background: white;
+        padding: 20px;
+      }
+
+      .invoice-container {
+        max-width: 800px;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        padding: 30px;
+        background: white;
+      }
+
+      /* Header Section */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo-placeholder {
+        width: 40px;
+        height: 40px;
+        background: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+      }
+
+      .company-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+      }
+
+      .header-right {
+        text-align: right;
+      }
+
+      .invoice-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .page-info {
+        font-size: 10px;
+        color: #666;
+      }
+
+      /* Invoice Details Grid */
+      .invoice-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .invoice-info {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .invoice-info label {
+        font-weight: bold;
+        min-width: 80px;
+      }
+
+      .invoice-info span {
+        color: #333;
+      }
+
+      /* Customer and Reference Section */
+      .customer-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .customer-info,
+      .reference-info {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .customer-info label,
+      .reference-info label {
+        font-weight: bold;
+        min-width: 80px;
+      }
+
+      /* Items Table */
+      .items-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+      }
+
+      .items-table th {
+        background: #f5f5f5;
+        padding: 10px;
+        text-align: left;
+        border-bottom: 2px solid #ddd;
+        font-weight: bold;
+      }
+
+      .items-table td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .item-details {
+        margin-top: 5px;
+        font-size: 10px;
+        color: #666;
+      }
+
+      .item-details div {
+        margin-bottom: 2px;
+      }
+
+      /* Summary Section */
+      .summary-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .totals {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .totals label {
+        font-weight: bold;
+        min-width: 80px;
+      }
+
+      .payment-section {
+        text-align: right;
+      }
+
+      .due-payment {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .amount {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .bank-details {
+        font-size: 10px;
+        line-height: 1.6;
+      }
+
+      /* Footer Section */
+      .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+      }
+
+      .company-details {
+        font-size: 10px;
+        line-height: 1.6;
+      }
+
+      .company-details div {
+        margin-bottom: 3px;
+      }
+
+      .additional-details {
+        font-size: 10px;
+        line-height: 1.6;
+      }
+
+      .additional-details div {
+        margin-bottom: 3px;
+      }
+
+      /* Utility Classes */
+      .text-right {
+        text-align: right;
+      }
+
+      .text-bold {
+        font-weight: bold;
+      }
+
+      .text-large {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invoice-container">
+      <!-- Header Section -->
+      <div class="header">
+        <div class="logo-section">
+          <div class="logo-placeholder">LOGO</div>
+          <div class="company-name">FOLKBILAR I SVEDALA AB</div>
+        </div>
+        <div class="header-right">
+          <div class="invoice-title">Invoice</div>
+          <div class="page-info">Page 1(1)</div>
+        </div>
+      </div>
+
+      <!-- Invoice Details -->
+      <div class="invoice-details">
+        <div class="invoice-info">
+          <label>Invoice date:</label>
+          <span>2025-06-30</span>
+          <label>Invoice no:</label>
+          <span>5526</span>
+          <label>OCR:</label>
+          <span>552661</span>
+        </div>
+        <div class="invoice-info">
+          <label>Bill to:</label>
+          <span>Ets Willems Sa</span>
+          <label></label>
+          <span>Route de Maestricht 84</span>
+          <label></label>
+          <span>4600 Visé, Belgium</span>
+        </div>
+      </div>
+
+      <!-- Customer and Reference Section -->
+      <div class="customer-section">
+        <div class="customer-info">
+          <label>Cust No:</label>
+          <span>7510084854</span>
+          <label>Your VAT no:</label>
+          <span>BE0440667535</span>
+        </div>
+        <div class="reference-info">
+          <label>Our Reference:</label>
+          <span>Noor Sangin</span>
+          <label>Due date:</label>
+          <span>2025-07-02</span>
+          <label>Penalty Interest:</label>
+          <span>10%</span>
+        </div>
+      </div>
+
+      <!-- Items Table -->
+      <table class="items-table">
+        <thead>
+          <tr>
+            <th>Item no</th>
+            <th>Designation</th>
+            <th>Amount</th>
+            <th>Unit</th>
+            <th>ppu</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>1001</td>
+            <td>
+              Volkswagen T-ROC 1.0 TSI
+              <div class="item-details">
+                
+                <div>VIN: WVGZZZA1ZNV106073</div>
+                 
+                <div>Km Stand: 42 000</div>
+                 
+                <div>First Reg: 2022-02-21</div>
+                
+              </div>
+            </td>
+            <td>1,00</td>
+            <td>st</td>
+            <td>15 000,00</td>
+            <td>15 000,00</td>
+          </tr>
+          
+          <tr>
+            <td>10093</td>
+            <td>
+              Transport EU
+              <div class="item-details">
+                  
+              </div>
+            </td>
+            <td>1,00</td>
+            <td></td>
+            <td>530,00</td>
+            <td>530,00</td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <!-- Summary Section -->
+      <div class="summary-section">
+        <div class="totals">
+          <label>Excl. VAT:</label>
+          <span>15 530,00</span>
+          <label>Total:</label>
+          <span>15 530,00</span>
+        </div>
+        <div class="payment-section">
+          <div class="due-payment">DUE PAYMENT</div>
+          <div class="amount">SEK 15 530,00</div>
+          <div class="bank-details">
+            <div>IBAN: SE61 1200 0000 0123 5065 4524</div>
+            <div>BIC: DABASESX</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="footer">
+        <div class="company-details">
+          <div><strong>Reverse Charge</strong></div>
+          <div>FOLKBILAR I SVEDALA AB</div>
+          <div>Verkstadsgatan 10</div>
+          <div>23351 Svedala, Sweden</div>
+          <div>Phone: 0737002449</div>
+          <div>E-mail: info@folkbilar.se</div>
+          <div>Web address: https://folkbilar.se/</div>
+        </div>
+        <div class="additional-details">
+          <div><strong>Bankgiro:</strong> 544-9814</div>
+          <div><strong>Corporate id no:</strong> 559419027301</div>
+          <div><strong>VAT reg. no:</strong> SE559419027301</div>
+          <div><strong>Approved for f-tax</strong></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

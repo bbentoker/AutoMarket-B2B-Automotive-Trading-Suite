@@ -1,0 +1,352 @@
+CAR SALES PLATFORM - ALL EMAIL TEMPLATES
+===========================================
+
+MAIN EMAIL TEMPLATES
+===========================================
+
+1. COUNTER OFFER EMAIL
+-----------------------
+Subject: Counter Offer Received
+
+Dear [Dealer Name],
+
+A counter offer has been made for your offer on the following vehicle:
+
+Vehicle Details:
+- Brand: [Brand Name]
+- Model: [Model]
+- Registration Number: [Registration Number]
+- Counter Offer Amount: [Counter Offer Amount]
+
+[Accept Counter Offer Button]
+
+If you wish to accept this counter offer, please click the button above.
+
+Best regards,
+Car Sales Platform Team
+
+---
+
+2. NEWSLETTER EMAIL
+-------------------
+Subject: AutoMarket Newsletter
+
+Hello [User Name],
+
+Discover today's selection of quality cars available at AutoMarket — all offered with competitive margins designed for your dealership.
+
+Buying from us is simple: review detailed inspection reports for every vehicle, select the cars you want, and we take care of the rest — transport is included in the price. Plus, track your orders in real time through your personalized dashboard.
+
+[Car Listings Grid with vehicle details including:]
+- Make & Model
+- Year
+- Price
+- Mileage
+- Fuel Type
+- Transmission
+- VAT status
+- Time remaining
+
+PURCHASE PROCESS
+[Purchase process diagram/steps]
+
+Have any questions?
+Just reply to this email or reach out to us at info@automarket.example.com.
+
+AutoMarket BV
+Avenue Kersbeek 308, 1180 Bruxelles, Belgium
+
+---
+
+3. OFFER REJECTED EMAIL
+------------------------
+Subject: 🚫 Offer Rejected
+
+A user has rejected your counter offer for the following car.
+
+Offer Details:
+- User: [User Name] ([User Email])
+- Company: [Company Name]
+- Vehicle: [Vehicle Brand] [Vehicle Model]
+- VIN: [VIN Number]
+- Registration: [Registration Number]
+- Offer Amount: €[Offer Amount]
+- Listing Price: €[Listing Price]
+- Rejected At: [Rejected Date]
+
+Next Steps: You may want to follow up with the user to understand their decision or review the pricing strategy for this vehicle.
+
+This notification was automatically generated when the user rejected an offer.
+
+---
+
+4. RESERVATION EMAIL
+---------------------
+Subject: Car Listing Reserved
+
+Hello [User Name],
+
+You have successfully reserved the following car listing:
+
+Vehicle Details:
+- Brand: [Brand Name]
+- Model: [Model]
+- Registration Number: [Registration Number]
+- Price: [Listing Price] [Currency]
+
+Reservation Confirmed!
+Our team will contact you shortly with further details.
+
+Thank you for choosing our platform!
+
+Best regards,
+Car Sales Platform Team
+
+---
+
+5. WELCOME COMPLETE EMAIL
+--------------------------
+Subject: Welcome to Car Sales Platform!
+
+🎉 Registration Complete!
+Your dealer account has been successfully created and activated.
+
+Account Details:
+- Name: [Dealer Name]
+- Company: [Company Name]
+- Email: [Email]
+
+✅ Account Activated
+Great news! Your account is now fully activated and ready to use. You can immediately start accessing all platform features and begin your car trading journey.
+
+Get Started Now:
+- Log in to your account with your registered email and password
+- Complete your dealer profile with additional business information
+- Browse available car listings and start bidding
+
+[Login to Your Account Button]
+
+Need Help Getting Started?
+Our support team is here to help you make the most of our platform. Contact us if you have any questions.
+
+Thank you for choosing Car Sales Platform!
+The Car Sales Platform Team
+
+---
+
+6. WELCOME EMAIL
+----------------
+Subject: Welcome to Car Sales Platform!
+
+🎉 Registration Successful!
+Your dealer account has been created successfully.
+
+Account Details:
+- Name: [Dealer Name]
+- Company: [Company Name]
+- Email: [Email]
+
+⏳ Account Pending Approval
+Your account is currently under review. Our team will verify your information and activate your account shortly. You'll receive another email once your account is approved and ready to use.
+
+What's Next?
+- Wait for account approval (usually within 24-48 hours)
+- Complete your dealer profile with additional business information
+- Start browsing and bidding on available car listings
+
+Need Help?
+Our support team is here to help you get started. Contact us if you have any questions.
+
+Thank you for choosing Car Sales Platform!
+The Car Sales Platform Team
+
+STAGE EMAIL TEMPLATES
+===========================================
+
+7. CAR DELIVERED EMAIL
+-----------------------
+Subject: Car delivered
+
+Dear [Vendor Account Name],
+
+🚗 Delivery Complete: We're pleased to inform you that your [Brand] [Model] with the following VIN: [VIN Number] has been successfully delivered.
+
+Thank you for your trust in AutoMarket. We're proud to support your dealership and look forward to continuing to provide you with the right vehicles for your business.
+
+Should you need anything further, we're just a message away.
+
+Best regards,
+Team AutoMarket
+
+---
+
+8. CAR PICKED UP EMAIL
+-----------------------
+Subject: Car Picked Up
+
+Dear [Vendor Account Name],
+
+🚛 Transport Update: Your [Brand] [Model] with the following VIN: [VIN Number] has been picked up and is now on the way to you.
+
+If you have any questions, feel free to reach out — we're happy to assist.
+
+Best regards,
+Team AutoMarket
+
+
+
+---
+
+9. DOCUMENTS SENT EMAIL
+-------------------------
+Subject: Documents sent
+
+Dear [Vendor Account Name],
+
+📄 Documents Dispatched: The documents for your [Brand] [Model] with the following VIN: [VIN Number] have been dispatched via UPS Express and are on their way to you.
+
+📦 Track Your Shipment with UPS Express
+You can track your shipment through UPS Express using the tracking code below. Click on the tracking code to open the UPS tracking page:
+
+[Tracking Code Button - Links to UPS tracking]
+
+If you have any questions or need further assistance, please don't hesitate to get in touch. We're here to help.
+
+Best regards,
+Team AutoMarket
+
+---
+
+10. NEW TEMPLATE EMAIL
+-----------------------
+Subject: Important Update - [Make] [Model]
+
+Hello [User Name]!
+
+We have an important update regarding your [Make] [Model] listing.
+
+[Custom Message if provided]
+
+Vehicle Details:
+- Make & Model: [Make] [Model]
+- Year: [Year]
+- Price: €[Price]
+- Mileage: [Mileage] km
+
+[View Details Button]
+
+Need Help?
+Contact our support team or your dealer [Dealer Name] for any questions.
+
+Best regards,
+Car Sales Platform Team
+
+---
+
+11. OFFERS EMAIL
+-----------------
+Subject: Offer received
+
+Dear [Vendor Account Name],
+
+💼 Offer Confirmation: Thank you for submitting your offer for the [Brand] [Model]
+
+We've shared your proposal with the seller and are now awaiting their response. As soon as we receive an update, we'll notify you by email and within your dashboard.
+
+We appreciate your continued trust in AutoMarket.
+
+Best regards,
+Team AutoMarket
+
+---
+
+12. PAYMENT RECEIVED EMAIL
+---------------------------
+Subject: Payment Received
+
+Dear [Vendor Account Name],
+
+We're pleased to confirm that your payment for the [Brand] [Model], (VIN: [VIN Number]) has been successfully received. Thank you!
+
+We are now proceeding with transport arrangements for your vehicle and will update you shortly with the estimated pickup date.
+
+Should you have any questions in the meantime, feel free to reach out.
+
+Kind regards,
+Team AutoMarket
+
+---
+
+13. PROFORMA INVOICE SENT EMAIL
+--------------------------------
+Subject: Proforma Invoice - Action Required
+
+Dear [Vendor Account Name],
+
+Please find the proforma invoice for the [Brand] [Model] (VIN: [VIN Number]) attached to this email.
+
+📊 Dashboard Access
+You can also access your invoice directly in your dashboard by clicking the link below:
+[View Invoice in Dashboard Button]
+
+⏰ Important: We kindly ask that you review the invoice and complete the payment within 24 hours to ensure a smooth continuation of the process.
+
+If you have any questions or need assistance, don't hesitate to contact us.
+
+Best regards,
+Team AutoMarket
+
+---
+
+14. PURCHASED EMAIL
+--------------------
+Subject: Purchased
+
+Dear [Vendor Account Name],
+
+🎉 Great news! We're pleased to confirm the successful purchase of your [Brand] [Model], VIN: [VIN Number].
+
+📄 Next Steps: A proforma invoice will be sent to you shortly. We kindly ask that payment be completed within 48 hours to allow us to proceed with booking transport for your vehicle.
+
+Thank you for placing your trust in AutoMarket.
+
+Kind regards,
+Team AutoMarket
+
+---
+
+15. RESERVED EMAIL
+-------------------
+Subject: [Brand] [Model] (VIN: [VIN Number]) Reserved – Next Steps in Progress
+
+Dear [Vendor Account Name],
+
+🔒 Reservation Confirmed: We're pleased to confirm that the vehicle you selected has been successfully reserved. This guarantees it will not be made available to other buyers while we engage with the seller to move your purchase forward.
+
+⚙️ Next Steps: Our team is currently working to finalize the next steps and will update you shortly via email and through your dashboard.
+
+Thank you for choosing AutoMarket.
+
+Best regards,
+Team AutoMarket
+
+---
+
+16. TRANSPORT BOOKED EMAIL
+---------------------------
+Subject: Transport Booked
+
+Dear [Vendor Account Name],
+
+🚛 Transport Scheduled: We're pleased to inform you that transport for your [Brand] [Model] (VIN: [VIN Number]) has been successfully scheduled.
+
+📅 Transport Schedule
+- Estimated Pickup Date: [Expected Pick Up Date]
+- Estimated Delivery Date: [Expected Delivery Date]
+
+If you have any questions or need further assistance, please don't hesitate to contact us. We're here to help every step of the way.
+
+Best regards,
+Team AutoMarket
+
+ 

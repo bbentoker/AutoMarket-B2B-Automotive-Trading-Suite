@@ -26,35 +26,26 @@ This document inventories what the platform **actually does** today — every pa
 
 The platform is composed of six sub-projects sharing one PostgreSQL database and one Express API.
 
-```
- ┌────────────────────┐  ┌────────────────────┐  ┌─────────────────────┐  ┌────────────────────┐
- │ automarket-landing │  │ automarket-browse  │  │ automarket-dashboard│  │  automarket-admin  │
- │     (Next.js)      │  │  (React, 5 langs)  │  │    (React + TS)     │  │  (React, internal) │
- │  login / register  │  │  browse + reserve  │  │     dealer ops      │  │  full operations   │
- └─────────┬──────────┘  └─────────┬──────────┘  └─────────┬───────────┘  └─────────┬──────────┘
-           │                       │                       │                        │
-           └───────────────────────┴───────────┬───────────┴────────────────────────┘
-                                               ▼
-                                ┌──────────────────────────────┐
-                                │      automarket-backend      │
-                                │   Node / Express / Sequelize │
-                                └──────┬──────────┬────────┬───┘
-                                       │          │        │
-                ┌──────────────────────┘          │        └──────────────────────┐
-                ▼                                 ▼                               ▼
-         ┌─────────────┐                  ┌──────────────┐                ┌──────────────┐
-         │ PostgreSQL  │                  │ S3 / Spaces  │                │   Mailgun    │
-         └──────▲──────┘                  └──────────────┘                └──────────────┘
-                │
-                │ writes scraped adverts
-                │ directly to shared DB
-                │
-       ┌────────┴─────────────┐
-       │ automarket-scraper   │
-       │ (Node + cron)        │
-       │ ListingSiteA dealer  │
-       │ inventory monitor    │
-       └──────────────────────┘
+```mermaid
+flowchart TB
+  landing["automarket-landing<br/>Next.js<br/>login / register"]
+  browse["automarket-browse<br/>React, 5 langs<br/>browse + reserve"]
+  dashboard["automarket-dashboard<br/>React + TS<br/>dealer ops"]
+  admin["automarket-admin<br/>React, internal<br/>full operations"]
+  api["automarket-backend<br/>Node / Express / Sequelize"]
+  db[("PostgreSQL")]
+  s3[("S3 / Spaces")]
+  email["Mailgun"]
+  scraper["automarket-scraper<br/>Node + cron<br/>ListingSiteA monitor"]
+
+  landing --> api
+  browse --> api
+  dashboard --> api
+  admin --> api
+  api --> db
+  api --> s3
+  api --> email
+  scraper -->|"writes scraped adverts"| db
 ```
 
 | Sub-project | Stack | Audience | Purpose |
@@ -301,25 +292,23 @@ Standalone Node service writing **directly to the shared Postgres** (not through
 
 ## 8. Cross-app authentication model
 
-```
- ┌──────────────────────┐        ┌────────────────────┐
- │   Admin login form   │        │     JWT (1h)       │
- │    (admin panel)     │ ─────► │    role: admin     │ ─────────────► automarket-admin
- │  email + password    │        │                    │
- └──────────────────────┘        └────────────────────┘
+```mermaid
+flowchart LR
+  adminForm["Admin login form<br/>email + password"]
+  adminJWT["JWT 1h<br/>role: admin"]
+  adminApp["automarket-admin"]
+  dealerForm["Dealer login form<br/>email + password"]
+  dealerJWT["JWT 1h<br/>role: dealer"]
+  browseApp["automarket-browse"]
+  dashApp["automarket-dashboard"]
+  magicLink["Magic link<br/>login_token in emails"]
+  loginCode["POST /auth/dealer/login-code"]
 
- ┌──────────────────────┐
- │  Dealer login form   │        ┌────────────────────┐        ┌──► automarket-browse
- │      (landing)       │ ─────► │     JWT (1h)       │ ───────┤
- │  email + password    │        │   role: dealer     │        └──► automarket-dashboard
- └──────────────────────┘        └─────────▲──────────┘
-                                           │
- ┌──────────────────────┐                  │
- │     Magic link       │                  │
- │   ?login_token=...   │  ────────────────┘
- │   in weekly /        │   exchanged via
- │   wishlist emails    │   POST /auth/dealer/login-code
- └──────────────────────┘
+  adminForm --> adminJWT --> adminApp
+  dealerForm --> dealerJWT
+  dealerJWT --> browseApp
+  dealerJWT --> dashApp
+  magicLink --> loginCode --> dealerJWT
 ```
 
 - **JWT (1h expiry)** signed with `JWT_SECRET`. Payload includes `id`, `role`.

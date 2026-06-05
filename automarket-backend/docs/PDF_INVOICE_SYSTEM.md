@@ -253,12 +253,13 @@ node src/tests/pdfService.test.js
 
 PDFs are stored in S3 with this structure:
 
-```
-your-s3-bucket/
-├── invoices/
-│   ├── proforma-invoice-INV-ABC123-1234567890.pdf
-│   ├── proforma-invoice-INV-DEF456-1234567891.pdf
-│   └── ...
+```mermaid
+flowchart TD
+  bucket[your-s3-bucket]
+  bucket --> invoices
+  invoices --> pdf1["proforma-invoice-INV-ABC123-1234567890.pdf"]
+  invoices --> pdf2["proforma-invoice-INV-DEF456-1234567891.pdf"]
+  invoices --> pdfMore["..."]
 ```
 
 ## Security Considerations

@@ -211,18 +211,19 @@ const result = await invoiceService.generateInvoice(
 
 ## File Structure
 
-```
-src/
-├── services/
-│   └── invoiceService.js          # Main service class
-├── templates/
-│   └── invoice-template.html      # HTML template for invoices
-├── tests/
-│   └── invoiceService.test.js     # Test file with examples
-├── examples/
-│   └── invoiceExample.js          # Usage examples
-└── output/
-    └── invoices/                  # Generated PDF files (auto-created)
+```mermaid
+flowchart TD
+  src[src/]
+  src --> services
+  src --> templates
+  src --> tests
+  src --> examples
+  src --> output
+  services --> invoiceService.js["invoiceService.js — main service class"]
+  templates --> invoice_template.html["invoice-template.html — HTML template"]
+  tests --> invoiceService_test.js["invoiceService.test.js — test examples"]
+  examples --> invoiceExample.js["invoiceExample.js — usage examples"]
+  output --> invoices["invoices/ — generated PDFs (auto-created)"]
 ```
 
 ## Testing

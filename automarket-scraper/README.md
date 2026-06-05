@@ -4,27 +4,28 @@ A Node.js application for scraping car listings from ListingSiteA with automated
 
 ## Project Structure
 
-```
-automarket-scraper/
-├── src/                          # Source code
-│   ├── services/                 # Business logic services
-│   │   ├── scraper.js           # Main scraping logic
-│   │   ├── extractNewAdvert.js  # Advert extraction logic
-│   │   ├── userService.js       # User API operations
-│   │   └── advertService.js     # Advert database operations
-│   ├── utils/                    # Utility functions
-│   └── index.js                  # Main application entry point
-├── models/                       # Database models
-│   ├── advert.js
-│   ├── control.js
-│   └── index.js
-├── config/                       # Configuration files
-│   └── database.js              # Database configuration
-├── scripts/                      # Utility scripts
-│   └── example.js               # Example implementation
-├── docs/                         # Documentation (schema owned by backend)
-├── main.js                       # Application entry point
-└── package.json
+```mermaid
+flowchart TD
+  root[automarket-scraper]
+  root --> src
+  root --> models
+  root --> config
+  root --> scripts
+  root --> docs["docs/ (schema owned by backend)"]
+  root --> main.js
+  root --> package.json
+  src --> services
+  src --> utils
+  src --> index.js
+  services --> scraper.js
+  services --> extractNewAdvert.js
+  services --> userService.js
+  services --> advertService.js
+  models --> advert.js
+  models --> control.js
+  models --> models_index.js["index.js"]
+  config --> database.js
+  scripts --> example.js
 ```
 
 ## Features

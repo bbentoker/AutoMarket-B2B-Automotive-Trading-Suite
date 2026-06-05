@@ -105,9 +105,6 @@ The following were removed or replaced:
 - Customer data dumps (xlsx, csv, json, invoices, dealer seed data)
 - Real scraping target names → generic `ListingSiteA/B/C`
 - Production customer domain → `*.automarket.example.com`
-- Informal AI prompt / scratch files removed
-- Git history (`.git/` directories removed; re-init before publishing)
-
 ## License
 
 Portfolio showcase only. Not licensed for commercial use of the original customer's product.

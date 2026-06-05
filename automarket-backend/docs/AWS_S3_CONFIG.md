@@ -63,18 +63,18 @@ AWS_SECRET_ACCESS_KEY=your-secret-access-key
 
 Images are organized in S3 with the following folder structure:
 
-```
-your-bucket-name/
-├── listings/
-│   ├── 1/                    # Listing ID 1
-│   │   ├── uuid1.jpg         # Main listing photos
-│   │   ├── uuid2.jpg
-│   │   └── damaged-parts/
-│   │       ├── uuid3.jpg     # Damaged parts photos
-│   │       └── uuid4.jpg
-│   ├── 2/                    # Listing ID 2
-│   │   └── ...
-│   └── ...
+```mermaid
+flowchart TD
+  bucket[your-bucket-name]
+  bucket --> listings
+  listings --> lid1["listings/1/ — Listing ID 1"]
+  listings --> lid2["listings/2/ — Listing ID 2"]
+  listings --> lidMore["..."]
+  lid1 --> uuid1["uuid1.jpg — main photo"]
+  lid1 --> uuid2["uuid2.jpg — main photo"]
+  lid1 --> damaged["damaged-parts/"]
+  damaged --> uuid3["uuid3.jpg — damaged part"]
+  damaged --> uuid4["uuid4.jpg — damaged part"]
 ```
 
 ## Features

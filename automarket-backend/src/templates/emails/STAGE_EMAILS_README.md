@@ -151,26 +151,27 @@ console.log(getSupportedLanguages());
 
 ## File Structure
 
-```
-src/templates/emails/
-├── stages/
-│   ├── carsForSale.js
-│   ├── reserved.js
-│   ├── offers.js
-│   ├── purchased.js
-│   ├── proformaInvoiceSent.js
-│   ├── paymentReceived.js
-│   ├── paymentSent.js
-│   ├── carDeregistered.js
-│   ├── dealDone.js
-│   ├── noDeal.js
-│   ├── carDelivered.js
-│   ├── documentsSent.js
-│   ├── transportBooked.js
-│   └── carPickedUp.js
-├── stageEmailService.js          # Main service
-├── stageEmailUsageExample.js     # Usage examples
-└── STAGE_EMAILS_README.md        # This documentation
+```mermaid
+flowchart TD
+  root["src/templates/emails/"]
+  root --> stages
+  root --> stageEmailService.js["stageEmailService.js — main service"]
+  root --> stageEmailUsageExample.js["stageEmailUsageExample.js — usage examples"]
+  root --> readme["STAGE_EMAILS_README.md — this documentation"]
+  stages --> carsForSale.js
+  stages --> reserved.js
+  stages --> offers.js
+  stages --> purchased.js
+  stages --> proformaInvoiceSent.js
+  stages --> paymentReceived.js
+  stages --> paymentSent.js
+  stages --> carDeregistered.js
+  stages --> dealDone.js
+  stages --> noDeal.js
+  stages --> carDelivered.js
+  stages --> documentsSent.js
+  stages --> transportBooked.js
+  stages --> carPickedUp.js
 ```
 
 ## Template Structure
